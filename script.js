@@ -1,3 +1,19 @@
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = themeToggleBtn.querySelector('i');
+
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    
+    if (document.body.classList.contains('light-mode')) {
+        themeIcon.classList.remove('ph-sun');
+        themeIcon.classList.add('ph-moon');
+    } else {
+        themeIcon.classList.remove('ph-moon');
+        themeIcon.classList.add('ph-sun');
+    }
+});
+
 // Tab Switching Logic
 const tabs = document.querySelectorAll('.tab');
 const views = document.querySelectorAll('.view');

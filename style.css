@@ -314,3 +314,148 @@ h2 {
 .social-btn:hover {
     background: #1f2937;
 }
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #111827;
+    border: 1px solid #1f2937;
+    color: #e5e7eb;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 100;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    background: #1f2937;
+    color: #ffffff;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+body.light-mode .auth-card {
+    background-color: #ffffff;
+    border-color: #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .auth-tabs {
+    background: #f3f4f6;
+    border-color: #e5e7eb;
+}
+
+body.light-mode .auth-tabs .tab {
+    color: #6b7280;
+}
+
+body.light-mode .auth-tabs .tab.active {
+    background: #ffffff;
+    color: #111827;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .auth-tabs .tab:hover:not(.active) {
+    color: #374151;
+}
+
+body.light-mode h2 {
+    color: #111827;
+}
+
+body.light-mode .subtitle {
+    color: #6b7280;
+}
+
+body.light-mode .input-group label {
+    color: #4b5563;
+}
+
+body.light-mode .input-wrapper {
+    background: #f9fafb;
+    border-color: #e5e7eb;
+}
+
+body.light-mode .input-wrapper:focus-within {
+    border-color: #3b82f6;
+}
+
+body.light-mode .input-wrapper input {
+    color: #111827;
+}
+
+body.light-mode .input-wrapper input::placeholder {
+    color: #9ca3af;
+}
+
+body.light-mode .input-wrapper > i:first-child {
+    color: #9ca3af;
+}
+
+body.light-mode .icon-btn {
+    color: #9ca3af;
+}
+
+body.light-mode .icon-btn:hover {
+    color: #6b7280;
+}
+
+body.light-mode .remember-me {
+    color: #6b7280;
+}
+
+body.light-mode .remember-me input {
+    border-color: #9ca3af;
+}
+
+body.light-mode .remember-me input:checked {
+    background: #3b82f6;
+    border-color: #3b82f6;
+}
+
+body.light-mode .remember-me input:checked::after {
+    border-color: white;
+}
+
+body.light-mode .divider span {
+    color: #6b7280;
+}
+
+body.light-mode .divider::before, 
+body.light-mode .divider::after {
+    border-color: #e5e7eb;
+}
+
+body.light-mode .social-btn {
+    background: #ffffff;
+    border-color: #e5e7eb;
+    color: #374151;
+}
+
+body.light-mode .social-btn:hover {
+    background: #f9fafb;
+}
+
+body.light-mode .theme-toggle-btn {
+    background: #ffffff;
+    border-color: #e5e7eb;
+    color: #374151;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .theme-toggle-btn:hover {
+    background: #f9fafb;
+    color: #111827;
+}
