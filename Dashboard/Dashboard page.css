@@ -1,0 +1,4 @@
+body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .ai-gradient-bg { background: linear-gradient(135deg, #712ae2 0%, #3525cd 100%); }
+        .ai-insight-panel { backdrop-filter: blur(8px); background-color: rgba(234, 221, 255, 0.2); }
