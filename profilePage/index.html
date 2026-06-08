@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soft-6 | Copilot Dashboard</title>
+  <meta name="description"
+    content="Prepare for technical rounds with Soft-6 Copilot dashboard. Track interviews, average score, hours prepped, and skill profiles.">
+
+  <!-- Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+
+        <div class="brand-text-wrapper">
+          <span class="brand-title">Soft-6</span>
+          <span class="brand-subtitle">COPILOT ACTIVE</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item active" data-tab="dashboard">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined nav-icon">dashboard</span>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item" data-tab="interviews">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined nav-icon">group</span>
+              <span class="nav-text">Interviews</span>
+            </a>
+          </li>
+          <li class="nav-item" data-tab="analytics">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined nav-icon">bar_chart</span>
+              <span class="nav-text">Analytics</span>
+            </a>
+          </li>
+          <li class="nav-item" data-tab="insights">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined nav-icon">auto_awesome</span>
+              <span class="nav-text">Insights</span>
+            </a>
+          </li>
+          <li class="nav-item" data-tab="settings">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined nav-icon">settings</span>
+              <span class="nav-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-actions">
+        <button class="btn btn-primary btn-block" id="btnNewAssessment">
+          <span class="material-symbols-outlined btn-icon">add</span>
+          New Assessment
+        </button>
+      </div>
+
+
+      <div class="sidebar-profile">
+        <div class="profile-avatar-wrapper">
+          <div class="profile-avatar">AR</div>
+        </div>
+        <div class="profile-info">
+          <span class="profile-name">Alex Rivera</span>
+          <span class="profile-tier">Pro Member</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Dashboard Tab Pane -->
+      <section id="tab-dashboard" class="tab-panel active">
+        <!-- Content Header -->
+        <header class="content-header">
+          <div class="header-welcome">
+            <h1 class="header-title">Welcome back, Alex.</h1>
+            <p class="header-subtitle">Your co-pilot is ready for today's technical round prep.</p>
+          </div>
+          <div class="header-status">
+            <span class="status-dot"></span>
+            <span class="status-text">SYSTEM: OPTIMIZED</span>
+          </div>
+        </header>
+
+        <!-- KPI Metrics Cards Row -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label">INTERVIEWS</span>
+            <div class="metric-value-wrapper">
+              <span class="metric-value" id="stat-interviews">24</span>
+              <span class="badge badge-success">+3 this week</span>
+            </div>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">AVG SCORE</span>
+            <div class="metric-value-wrapper">
+              <span class="metric-value" id="stat-score">88%</span>
+              <span class="badge badge-primary">Top 5%</span>
+            </div>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">HOURS PREP</span>
+            <div class="metric-value-wrapper">
+              <span class="metric-value" id="stat-hours">14.2</span>
+              <span class="metric-subtext">Weekly Goal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Grid (Weekly & Skill Profile) -->
+        <div class="charts-grid">
+          <!-- Weekly Performance Card -->
+          <div class="chart-card weekly-performance">
+            <div class="chart-header">
+              <h3 class="chart-title">Weekly Performance</h3>
+              <span class="chart-filter-badge">Last 7 Days</span>
+            </div>
+
+            <div class="bar-chart-container">
+              <div class="bar-chart-y-axis">
+                <span>10h</span>
+                <span>5h</span>
+                <span>0h</span>
+              </div>
+              <div class="bar-chart">
+                <div class="bar-col" data-day="Mon" data-value="3.2 hours prepped" style="--bar-height: 45%;">
+                  <div class="bar"></div>
+                  <span class="bar-label">MON</span>
+                </div>
+                <div class="bar-col" data-day="Tue" data-value="4.5 hours prepped" style="--bar-height: 60%;">
+                  <div class="bar"></div>
+                  <span class="bar-label">TUE</span>
+                </div>
+                <div class="bar-col" data-day="Wed" data-value="2.8 hours prepped" style="--bar-height: 38%;">
+                  <div class="bar"></div>
+                  <span class="bar-label">WED</span>
+                </div>
+                <div class="bar-col active" data-day="Thu" data-value="8.2 hours prepped" style="--bar-height: 85%;">
+                  <div class="bar"></div>
+                  <span class="bar-label">THU</span>
+                </div>
+                <div class="bar-col" data-day="Fri" data-value="5.0 hours prepped" style="--bar-height: 65%;">
+                  <div class="bar"></div>
+                  <span class="bar-label">FRI</span>
+                </div>
+                <div class="bar-col" data-day="Sat" data-value="7.2 hours prepped" style="--bar-height: 78%;">
+                  <div class="bar"></div>
+                  <span class="bar-label">SAT</span>
+                </div>
+                <div class="bar-col" data-day="Sun" data-value="3.5 hours prepped" style="--bar-height: 50%;">
+                  <div class="bar"></div>
+                  <span class="bar-label">SUN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Profile Card -->
+          <div class="chart-card skill-profile">
+            <h3 class="chart-title">AI Skill Profile</h3>
+
+            <div class="radar-chart-container">
+              <svg viewBox="0 0 200 200" class="radar-chart" id="radarChartSVG">
+                <!-- Background Grid Polygons -->
+                <polygon points="100,20 180,80 150,170 50,170 20,80" class="grid-poly level-3"></polygon>
+                <polygon points="100,50 150,90 130,150 70,150 50,90" class="grid-poly level-2"></polygon>
+                <polygon points="100,75 125,95 115,125 85,125 75,95" class="grid-poly level-1"></polygon>
+
+                <!-- Axis Lines -->
+                <line x1="100" y1="100" x2="100" y2="20" class="axis-line"></line>
+                <line x1="100" y1="100" x2="180" y2="80" class="axis-line"></line>
+                <line x1="100" y1="100" x2="150" y2="170" class="axis-line"></line>
+                <line x1="100" y1="100" x2="50" y2="170" class="axis-line"></line>
+                <line x1="100" y1="100" x2="20" y2="80" class="axis-line"></line>
+
+                <!-- Data Polygon -->
+                <polygon points="100,35 160,86 125,145 78,140 45,80" class="data-poly" id="skillPoly"></polygon>
+                <circle cx="100" cy="35" r="3.5" class="data-point"></circle>
+                <circle cx="160" cy="86" r="3.5" class="data-point"></circle>
+                <circle cx="125" cy="145" r="3.5" class="data-point"></circle>
+                <circle cx="78" cy="140" r="3.5" class="data-point"></circle>
+                <circle cx="45" cy="80" r="3.5" class="data-point"></circle>
+              </svg>
+
+              <div class="radar-label label-top" style="top: 8%; left: 50%; transform: translateX(-50%);">
+                <span class="label-badge">Technical</span>
+              </div>
+              <div class="radar-label label-right" style="top: 38%; right: -2%;">
+                <span class="label-badge">Communication</span>
+              </div>
+              <div class="radar-label label-bottom-right" style="bottom: 8%; right: 10%;">
+                <span class="label-badge">Problem Solving</span>
+              </div>
+              <div class="radar-label label-bottom-left" style="bottom: 8%; left: 10%;">
+                <span class="label-badge">Leadership</span>
+              </div>
+              <div class="radar-label label-left" style="top: 38%; left: -2%;">
+                <span class="label-badge">Design</span>
+              </div>
+            </div>
+
+            <!-- AI Suggestion Box -->
+            <div class="suggestion-box">
+              <span class="material-symbols-outlined suggestion-icon">auto_awesome</span>
+              <p class="suggestion-text">AI Suggestion: Practice &ldquo;System Scalability&rdquo; to reach Top 1%.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Target Disciplines Progress Card -->
+        <div class="disciplines-grid">
+          <div class="discipline-card">
+            <div class="discipline-header">
+              <div class="discipline-info">
+                <span class="material-symbols-outlined discipline-icon icon-se">code</span>
+                <div class="discipline-text-wrapper">
+                  <h4 class="discipline-title">Software Engineering</h4>
+                  <p class="discipline-subtitle">Algorithms, System Design, React</p>
+                </div>
+              </div>
+              <span class="discipline-percentage" id="progress-val-se">74%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill fill-se" id="progress-fill-se" style="width: 74%;"></div>
+            </div>
+          </div>
+
+          <div class="discipline-card">
+            <div class="discipline-header">
+              <div class="discipline-info">
+                <span class="material-symbols-outlined discipline-icon icon-pm">inventory_2</span>
+                <div class="discipline-text-wrapper">
+                  <h4 class="discipline-title">Product Management</h4>
+                  <p class="discipline-subtitle">Strategy, Metrics, User Research</p>
+                </div>
+              </div>
+              <span class="discipline-percentage" id="progress-val-pm">42%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill fill-pm" id="progress-fill-pm" style="width: 42%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <section class="activity-section">
+          <div class="activity-header">
+            <h3 class="activity-title">Recent Activity</h3>
+            <a href="#" class="view-history-link" id="btnViewHistory">View History</a>
+          </div>
+
+          <div class="activity-list" id="activityList">
+            <!-- Activity Item 1 -->
+            <div class="activity-item" data-id="act-1" data-title="BigTech Mock Interview: System Design"
+              data-score="92" data-date="Yesterday" data-duration="45 minutes" data-tags="EXCELLENT,ANALYZED"
+              data-desc="Excellent structuring of CDN caches, database replicas, and stateless application layers. Identified single point of failure in rate limiter.">
+              <div class="activity-score-circle score-excellent">
+                <span class="score-num">92</span>
+              </div>
+              <div class="activity-details">
+                <h4 class="activity-item-title">BigTech Mock Interview: System Design</h4>
+                <p class="activity-item-meta">Yesterday • 45 minutes duration</p>
+              </div>
+              <div class="activity-tags">
+                <span class="tag tag-success">EXCELLENT</span>
+                <span class="tag tag-primary">ANALYZED</span>
+              </div>
+              <button class="btn btn-secondary btn-view-report">View Report</button>
+            </div>
+
+            <!-- Activity Item 2 -->
+            <div class="activity-item" data-id="act-2" data-title="Behavioral Round: Leadership Principles"
+              data-score="81" data-date="Oct 12, 2023" data-duration="30 minutes" data-tags="GOOD"
+              data-desc="Good STAR formatting of answers. Showed strong bias for action. Need deeper exploration of 'Earn Trust' and handling team conflict scenarios.">
+              <div class="activity-score-circle score-good">
+                <span class="score-num">81</span>
+              </div>
+              <div class="activity-details">
+                <h4 class="activity-item-title">Behavioral Round: Leadership Principles</h4>
+                <p class="activity-item-meta">Oct 12, 2023 • 30 minutes duration</p>
+              </div>
+              <div class="activity-tags">
+                <span class="tag tag-info">GOOD</span>
+              </div>
+              <button class="btn btn-secondary btn-view-report">View Report</button>
+            </div>
+
+            <!-- Activity Item 3 -->
+            <div class="activity-item" data-id="act-3" data-title="Coding: Dynamic Programming Focus" data-score="76"
+              data-date="Oct 10, 2023" data-duration="60 minutes" data-tags="NEEDS FOCUS"
+              data-desc="Proper identification of overlapping subproblems. However, struggled to formulate the state transition relation. Time complexity was O(2^N) instead of O(N^2).">
+              <div class="activity-score-circle score-warning">
+                <span class="score-num">76</span>
+              </div>
+              <div class="activity-details">
+                <h4 class="activity-item-title">Coding: Dynamic Programming Focus</h4>
+                <p class="activity-item-meta">Oct 10, 2023 • 60 minutes duration</p>
+              </div>
+              <div class="activity-tags">
+                <span class="tag tag-warning">NEEDS FOCUS</span>
+              </div>
+              <button class="btn btn-secondary btn-view-report">View Report</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+          <div class="footer-left">
+            <span class="footer-brand">Soft-6</span>
+            <span class="footer-copyright">© 2026 Soft-6 Precision Platforms</span>
+          </div>
+        </footer>
+      </section>
+
+      <!-- Interviews Tab Pane -->
+      <section id="tab-interviews" class="tab-panel">
+        <header class="content-header">
+          <div class="header-welcome">
+            <h1 class="header-title">Mock Interviews</h1>
+            <p class="header-subtitle">Schedule, manage and analyze your technical and behavioral prep sessions.</p>
+          </div>
+        </header>
+        <div class="placeholder-view">
+          <span class="material-symbols-outlined placeholder-icon">group</span>
+          <h3>Interviews Dashboard</h3>
+          <p>This panel allows you to schedule mock interviews with copilots or peer groups. Switch back to the
+            Dashboard tab to view your progress.</p>
+        </div>
+      </section>
+
+      <!-- Analytics Tab Pane -->
+      <section id="tab-analytics" class="tab-panel">
+        <header class="content-header">
+          <div class="header-welcome">
+            <h1 class="header-title">Analytics</h1>
+            <p class="header-subtitle">Detailed breakdown of scores, topics, and time distribution.</p>
+          </div>
+        </header>
+        <div class="placeholder-view">
+          <span class="material-symbols-outlined placeholder-icon">bar_chart</span>
+          <h3>Advanced Metrics</h3>
+          <p>Analytics details and historical prep stats are updated automatically when assessments are completed.</p>
+        </div>
+      </section>
+
+      <!-- Insights Tab Pane -->
+      <section id="tab-insights" class="tab-panel">
+        <header class="content-header">
+          <div class="header-welcome">
+            <h1 class="header-title">Copilot Insights</h1>
+            <p class="header-subtitle">Tailored recommendations based on your recent activity and target goals.</p>
+          </div>
+        </header>
+        <div class="placeholder-view">
+          <span class="material-symbols-outlined placeholder-icon">auto_awesome</span>
+          <h3>Insights Center</h3>
+          <p>We analyze your code speed, space complexity, and behavioral response tags to provide tailored insights
+            here.</p>
+        </div>
+      </section>
+
+      <!-- Settings Tab Pane -->
+      <section id="tab-settings" class="tab-panel">
+        <header class="content-header">
+          <div class="header-welcome">
+            <h1 class="header-title">Settings</h1>
+            <p class="header-subtitle">Customize your co-pilot configurations, target tracks, and profile preferences.
+            </p>
+          </div>
+        </header>
+        <div class="placeholder-view">
+          <span class="material-symbols-outlined placeholder-icon">settings</span>
+          <h3>System Settings</h3>
+          <p>Manage integrations, notification channels, and active profile details.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Chat Button -->
+    <div class="floating-chat-container">
+      <button class="btn-chat-trigger" id="btnChatTrigger" aria-label="Open Copilot Chat">
+        <span class="material-symbols-outlined chat-icon">chat_bubble</span>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
