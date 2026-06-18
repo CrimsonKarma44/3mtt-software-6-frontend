@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft-6 | Authentication Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Toast Notification -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <div class="split-layout">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <div class="background-graphics"></div>
+
+            <div class="left-content">
+                <div class="logo">
+                    <span>Soft-6</span>
+                </div>
+
+                <div class="hero-text">
+                    <h1>Experience the<br>precision of AI-<br>driven intelligence.</h1>
+                    <p>Deploy enterprise-grade copilots designed for high-stakes environments where accuracy is the only
+                        metric that matters.</p>
+                </div>
+
+                <div class="ai-insight-card">
+                    <div class="card-header">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 21H15M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15ZM12 3V5M12 19V21M5 12H3M21 12H19M7.05025 7.05025L5.63604 5.63604M18.364 18.364L16.9497 16.9497M7.05025 16.9497L5.63604 18.364M18.364 5.63604L16.9497 7.05025"
+                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>AI INSIGHT</span>
+                    </div>
+                    <p>Soft-6 models prioritize surgical precision, reducing data hallucination by 94% in corporate
+                        compliance workflows.</p>
+                </div>
+            </div>
+
+            <div class="left-footer">
+                <div class="avatars">
+                    <img src="https://i.pravatar.cc/100?img=11" alt="Avatar">
+                    <img src="https://i.pravatar.cc/100?img=12" alt="Avatar">
+                    <img src="https://i.pravatar.cc/100?img=13" alt="Avatar">
+                </div>
+                <span>Trusted by 5,000+ Enterprise Teams</span>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+
+            <div class="right-content">
+                <!-- SIGNUP VIEW -->
+                <div class="form-container signup-view">
+                    <div class="form-header">
+                        <h2>Create Account</h2>
+                        <p>Secure your access to the AI precision ecosystem.</p>
+                    </div>
+
+                    <div class="social-login">
+                        <button class="social-btn" id="signup-google-btn">
+                            <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+                            Google
+                        </button>
+                        <button class="social-btn" id="signup-linkedin-btn">
+                            <!-- LinkedIn Icon -->
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="4" fill="#0A66C2" />
+                                <path d="M7 9H5V19H7V9Z" fill="white" />
+                                <circle cx="6" cy="6.5" r="1.5" fill="white" />
+                                <path
+                                    d="M19 13.5C19 11.6 17.6 10 15.5 10C14.3 10 13.4 10.6 13 11.2V9H11V19H13V14C13 12.9 13.9 12 15 12C16.1 12 17 12.9 17 14V19H19V13.5Z"
+                                    fill="white" />
+                            </svg>
+                            LinkedIn
+                        </button>
+                    </div>
+
+                    <div class="divider">
+                        <span>OR CONTINUE WITH EMAIL</span>
+                    </div>
+
+                    <form class="signup-form" id="signup-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" id="signup-firstname" placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" id="signup-lastname" placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Work Email</label>
+                            <div class="input-with-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <input type="email" id="signup-email" placeholder="name@company.com">
+                            </div>
+                            <span class="field-error" id="signup-email-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="input-with-icon password-field">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor"
+                                        stroke-width="2" />
+                                    <path d="M8 11V7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7V11"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                                <input type="password" id="signup-password" placeholder="••••••••">
+                                <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                    <!-- Eye icon (show) -->
+                                    <svg class="eye-icon eye-open" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    <!-- Eye-off icon (hide) -->
+                                    <svg class="eye-icon eye-off hidden" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M17.94 17.94A10.07 10.07 0 0112 20C5 20 1 12 1 12A18.45 18.45 0 015.06 5.06M9.9 4.24A9.12 9.12 0 0112 4C19 4 23 12 23 12A18.5 18.5 0 0120.71 15.68M14.12 14.12A3 3 0 119.88 9.88"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="helper-text">Must be at least 8 characters with one number and symbol.</span>
+                            <span class="field-error" id="signup-password-error"></span>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="signup-submit-btn">Get Started</button>
+                    </form>
+
+                    <div class="login-link">
+                        Already have an account? <a href="#" id="show-login">Login</a>
+                    </div>
+                </div>
+
+                <!-- LOGIN VIEW -->
+                <div class="form-container login-view">
+                    <div class="form-header">
+                        <h2>Welcome Back</h2>
+                        <p>Log in to access the AI precision ecosystem.</p>
+                    </div>
+
+                    <div class="social-login">
+                        <button class="social-btn" id="login-google-btn">
+                            <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+                            Google
+                        </button>
+                        <button class="social-btn" id="login-linkedin-btn">
+                            <!-- LinkedIn Icon -->
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="4" fill="#0A66C2" />
+                                <path d="M7 9H5V19H7V9Z" fill="white" />
+                                <circle cx="6" cy="6.5" r="1.5" fill="white" />
+                                <path
+                                    d="M19 13.5C19 11.6 17.6 10 15.5 10C14.3 10 13.4 10.6 13 11.2V9H11V19H13V14C13 12.9 13.9 12 15 12C16.1 12 17 12.9 17 14V19H19V13.5Z"
+                                    fill="white" />
+                            </svg>
+                            LinkedIn
+                        </button>
+                    </div>
+
+                    <div class="divider">
+                        <span>OR CONTINUE WITH EMAIL</span>
+                    </div>
+
+                    <form class="login-form" id="login-form" novalidate>
+                        <div class="form-group">
+                            <label>Work Email</label>
+                            <div class="input-with-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <input type="email" id="login-email" placeholder="name@company.com">
+                            </div>
+                            <span class="field-error" id="login-email-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="input-with-icon password-field">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor"
+                                        stroke-width="2" />
+                                    <path d="M8 11V7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7V11"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                                <input type="password" id="login-password" placeholder="••••••••">
+                                <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                    <!-- Eye icon (show) -->
+                                    <svg class="eye-icon eye-open" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    <!-- Eye-off icon (hide) -->
+                                    <svg class="eye-icon eye-off hidden" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M17.94 17.94A10.07 10.07 0 0112 20C5 20 1 12 1 12A18.45 18.45 0 015.06 5.06M9.9 4.24A9.12 9.12 0 0112 4C19 4 23 12 23 12A18.5 18.5 0 0120.71 15.68M14.12 14.12A3 3 0 119.88 9.88"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="field-error" id="login-password-error"></span>
+                        </div>
+
+                        <div class="checkbox-group" style="justify-content: space-between;">
+                            <div style="display: flex; gap: 0.5rem;">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">Remember me</label>
+                            </div>
+                            <a href="#" style="font-size: 0.875rem;">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="login-submit-btn">Login</button>
+                    </form>
+
+                    <div class="login-link">
+                        Don't have an account? <a href="#" id="show-signup">Create Account</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-footer">
+                <span>© 2026 SOFT-6 AI PRECISION PLATFORMS</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
