@@ -9,14 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const saveBtn = document.getElementById('btn-save-changes');
   const toast = document.getElementById('toast');
 
-  // 1. Sidebar Navigation Active Switching
-  // Exposed globally to keep inline HTML 'onclick' compatible
-  window.setActive = function (element) {
-    document.querySelectorAll('.nav-item').forEach(item => {
-      item.classList.remove('active');
-    });
-    element.classList.add('active');
-  };
+  // 1. Smooth Cross-Page Navigation
+  function navigateTo(url) {
+    document.body.classList.add('page-exiting');
+    setTimeout(() => {
+      window.location.href = url;
+    }, 250);
+  }
+
+  // Attach smooth navigation to all sidebar nav-links that go to external pages
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href !== '#') {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        navigateTo(href);
+      });
+    }
+  });
 
   // 2. Load settings from localStorage
   const savedTheme = localStorage.getItem('soft6-theme') || 'light';
@@ -142,5 +152,16 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       toast.classList.remove('show');
     }, 2800);
+  }
+
+  // --- Logout Trigger ---
+  const logoutBtn = document.querySelector('.logout-btn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      navigateTo('../LandingPage/LandingPage.html');
+    });
   }
 });

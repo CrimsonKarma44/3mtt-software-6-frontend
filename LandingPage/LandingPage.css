@@ -516,3 +516,213 @@ nav a:hover,
     justify-content: center;
   }
 }
+
+/* --- Dynamic Theme & Accent Syncing --- */
+[data-theme="dark"] body {
+  background: #0d0f1a;
+  color: #f1f3ff;
+}
+[data-theme="dark"] .navbar {
+  background: rgba(13, 15, 26, 0.95);
+}
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .pathway-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .copilot-card,
+[data-theme="dark"] .secondary-btn,
+[data-theme="dark"] .pathway-content button,
+[data-theme="dark"] .stats {
+  background: #161827;
+  color: #f1f3ff;
+  border-color: #252840;
+}
+[data-theme="dark"] .chat-bubble.light {
+  background: #1e2035;
+  color: #f1f3ff;
+}
+[data-theme="dark"] .section-title p,
+[data-theme="dark"] .section-top p,
+[data-theme="dark"] .copilot p,
+[data-theme="dark"] .hero p,
+[data-theme="dark"] .feature-card p,
+[data-theme="dark"] .pathway-content p,
+[data-theme="dark"] .testimonial-card p,
+[data-theme="dark"] .user span,
+[data-theme="dark"] .stat p,
+[data-theme="dark"] nav a,
+[data-theme="dark"] .footer-links a,
+[data-theme="dark"] .login {
+  color: #8b92b8;
+}
+
+[data-theme="amoled"] body {
+  background: #000000;
+  color: #ffffff;
+}
+[data-theme="amoled"] .navbar {
+  background: rgba(0, 0, 0, 0.95);
+}
+[data-theme="amoled"] .feature-card,
+[data-theme="amoled"] .pathway-card,
+[data-theme="amoled"] .testimonial-card,
+[data-theme="amoled"] .copilot-card,
+[data-theme="amoled"] .secondary-btn,
+[data-theme="amoled"] .pathway-content button,
+[data-theme="amoled"] .stats {
+  background: #0a0a0a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+}
+[data-theme="amoled"] .chat-bubble.light {
+  background: #121212;
+  color: #ffffff;
+}
+[data-theme="amoled"] .section-title p,
+[data-theme="amoled"] .section-top p,
+[data-theme="amoled"] .copilot p,
+[data-theme="amoled"] .hero p,
+[data-theme="amoled"] .feature-card p,
+[data-theme="amoled"] .pathway-content p,
+[data-theme="amoled"] .testimonial-card p,
+[data-theme="amoled"] .user span,
+[data-theme="amoled"] .stat p,
+[data-theme="amoled"] nav a,
+[data-theme="amoled"] .footer-links a,
+[data-theme="amoled"] .login {
+  color: #a3a3a3;
+}
+
+[data-accent="indigo"] .logo,
+[data-accent="indigo"] .hero h1 span,
+[data-accent="indigo"] nav a:hover,
+[data-accent="indigo"] .footer-links a:hover,
+[data-accent="indigo"] .login:hover,
+[data-accent="indigo"] .nav-actions button,
+[data-accent="indigo"] .primary-btn,
+[data-accent="indigo"] .hero-badge,
+[data-accent="indigo"] .feature-card button,
+[data-accent="indigo"] .section-top a,
+[data-accent="indigo"] .copilot span,
+[data-accent="indigo"] .chat-bubble.dark,
+[data-accent="indigo"] .stat h2,
+[data-accent="indigo"] .cta-box {
+  color: #4f46e5 !important;
+}
+[data-accent="indigo"] .nav-actions button,
+[data-accent="indigo"] .primary-btn,
+[data-accent="indigo"] .cta-box,
+[data-accent="indigo"] .chat-bubble.dark {
+  background: #4f46e5 !important;
+  color: white !important;
+}
+[data-accent="indigo"] .hero-badge,
+[data-accent="indigo"] .feature-card button {
+  background: #eef2ff !important;
+}
+
+[data-accent="purple"] .logo,
+[data-accent="purple"] .hero h1 span,
+[data-accent="purple"] nav a:hover,
+[data-accent="purple"] .footer-links a:hover,
+[data-accent="purple"] .login:hover,
+[data-accent="purple"] .nav-actions button,
+[data-accent="purple"] .primary-btn,
+[data-accent="purple"] .hero-badge,
+[data-accent="purple"] .feature-card button,
+[data-accent="purple"] .section-top a,
+[data-accent="purple"] .copilot span,
+[data-accent="purple"] .chat-bubble.dark,
+[data-accent="purple"] .stat h2,
+[data-accent="purple"] .cta-box {
+  color: #7c3aed !important;
+}
+[data-accent="purple"] .nav-actions button,
+[data-accent="purple"] .primary-btn,
+[data-accent="purple"] .cta-box,
+[data-accent="purple"] .chat-bubble.dark {
+  background: #7c3aed !important;
+  color: white !important;
+}
+[data-accent="purple"] .hero-badge,
+[data-accent="purple"] .feature-card button {
+  background: #f5f3ff !important;
+}
+
+[data-accent="teal"] .logo,
+[data-accent="teal"] .hero h1 span,
+[data-accent="teal"] nav a:hover,
+[data-accent="teal"] .footer-links a:hover,
+[data-accent="teal"] .login:hover,
+[data-accent="teal"] .nav-actions button,
+[data-accent="teal"] .primary-btn,
+[data-accent="teal"] .hero-badge,
+[data-accent="teal"] .feature-card button,
+[data-accent="teal"] .section-top a,
+[data-accent="teal"] .copilot span,
+[data-accent="teal"] .chat-bubble.dark,
+[data-accent="teal"] .stat h2,
+[data-accent="teal"] .cta-box {
+  color: #0d9488 !important;
+}
+[data-accent="teal"] .nav-actions button,
+[data-accent="teal"] .primary-btn,
+[data-accent="teal"] .cta-box,
+[data-accent="teal"] .chat-bubble.dark {
+  background: #0d9488 !important;
+  color: white !important;
+}
+[data-accent="teal"] .hero-badge,
+[data-accent="teal"] .feature-card button {
+  background: #f0fdfa !important;
+}
+
+[data-accent="emerald"] .logo,
+[data-accent="emerald"] .hero h1 span,
+[data-accent="emerald"] nav a:hover,
+[data-accent="emerald"] .footer-links a:hover,
+[data-accent="emerald"] .login:hover,
+[data-accent="emerald"] .nav-actions button,
+[data-accent="emerald"] .primary-btn,
+[data-accent="emerald"] .hero-badge,
+[data-accent="emerald"] .feature-card button,
+[data-accent="emerald"] .section-top a,
+[data-accent="emerald"] .copilot span,
+[data-accent="emerald"] .chat-bubble.dark,
+[data-accent="emerald"] .stat h2,
+[data-accent="emerald"] .cta-box {
+  color: #059669 !important;
+}
+[data-accent="emerald"] .nav-actions button,
+[data-accent="emerald"] .primary-btn,
+[data-accent="emerald"] .cta-box,
+[data-accent="emerald"] .chat-bubble.dark {
+  background: #059669 !important;
+  color: white !important;
+}
+[data-accent="emerald"] .hero-badge,
+[data-accent="emerald"] .feature-card button {
+  background: #ecfdf5 !important;
+}
+
+/* Background patterns layer */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-image 0.3s ease;
+}
+[data-pattern="grid"] body::before {
+  background-image: 
+    linear-gradient(#cbd5e1 1px, transparent 1px),
+    linear-gradient(90deg, #cbd5e1 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.12;
+}
+[data-pattern="dots"] body::before {
+  background-image: radial-gradient(#94a3b8 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.15;
+}

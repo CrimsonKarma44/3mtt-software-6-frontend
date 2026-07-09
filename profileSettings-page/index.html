@@ -6,71 +6,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soft-6 · Profile Settings</title>
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- SIDEBAR -->
+  <!-- Sidebar Navigation -->
   <aside class="sidebar">
-    <div class="logo">
-      <span class="logo-name">Soft-6</span>
-      <span class="logo-status">
-        <span class="status-dot"></span>
-        AI Copilot Active
-      </span>
+    <div class="sidebar-brand">
+      <a href="../LandingPage/LandingPage.html" style="text-decoration: none; display: flex; align-items: center;">
+        <div class="brand-text-wrapper">
+          <span class="brand-title">Soft-6</span>
+          <span class="brand-subtitle">COPILOT ACTIVE</span>
+        </div>
+      </a>
     </div>
 
-    <nav>
-      <div class="nav-item" onclick="setActive(this)">
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="3" y="3" width="7" height="7" rx="1" />
-          <rect x="14" y="3" width="7" height="7" rx="1" />
-          <rect x="3" y="14" width="7" height="7" rx="1" />
-          <rect x="14" y="14" width="7" height="7" rx="1" />
-        </svg>
-        Dashboard
-      </div>
-      <div class="nav-item" onclick="setActive(this)">
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="8" r="4" />
-          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-        </svg>
-        Interviews
-      </div>
-      <div class="nav-item" onclick="setActive(this)">
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 3v18h18" />
-          <polyline points="7 16 12 11 16 14 21 8" />
-        </svg>
-        Analytics
-      </div>
-      <div class="nav-item" onclick="setActive(this)">
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polygon
-            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-        </svg>
-        AI Insights
-      </div>
-      <div class="nav-item active" onclick="setActive(this)">
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="3" />
-          <path
-            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-        </svg>
-        Settings
-      </div>
+    <nav class="sidebar-nav">
+      <ul class="nav-list">
+        <li class="nav-item" data-tab="dashboard">
+          <a href="../profilePage/index.html#dashboard" class="nav-link">
+            <span class="material-symbols-outlined nav-icon">dashboard</span>
+            <span class="nav-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-tab="interviews">
+          <a href="../profilePage/index.html#interviews" class="nav-link">
+            <span class="material-symbols-outlined nav-icon">group</span>
+            <span class="nav-text">Interviews</span>
+          </a>
+        </li>
+        <li class="nav-item" data-tab="analytics">
+          <a href="../performanceDashboard/index.html" class="nav-link">
+            <span class="material-symbols-outlined nav-icon">bar_chart</span>
+            <span class="nav-text">Analytics</span>
+          </a>
+        </li>
+        <li class="nav-item" data-tab="insights">
+          <a href="../profilePage/index.html#insights" class="nav-link">
+            <span class="material-symbols-outlined nav-icon">auto_awesome</span>
+            <span class="nav-text">Insights</span>
+          </a>
+        </li>
+        <li class="nav-item active" data-tab="settings">
+          <a href="#" class="nav-link">
+            <span class="material-symbols-outlined nav-icon">settings</span>
+            <span class="nav-text">Settings</span>
+          </a>
+        </li>
+        <li class="nav-item logout-item">
+          <a href="#" class="nav-link logout-btn" style="color: var(--danger);">
+            <span class="material-symbols-outlined nav-icon">logout</span>
+            <span class="nav-text">Logout</span>
+          </a>
+        </li>
+      </ul>
     </nav>
 
-    <div class="sidebar-footer">
-      <div class="avatar-sm">AM</div>
-      <div class="sidebar-user-info">
-        <div class="sidebar-user-name">Alex Mercer</div>
-        <div class="sidebar-user-plan">Enterprise Pro</div>
+    <div class="sidebar-profile">
+      <div class="profile-avatar-wrapper">
+        <div class="profile-avatar">AM</div>
+      </div>
+      <div class="profile-info">
+        <span class="profile-name">Alex Mercer</span>
+        <span class="profile-tier">Enterprise Pro</span>
       </div>
     </div>
   </aside>

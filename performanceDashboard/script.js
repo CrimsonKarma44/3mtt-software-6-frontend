@@ -98,39 +98,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------
-    // 2. Sidebar Navigation — View Switching
+    // 2. Smooth Cross-Page Navigation
     // -------------------------------------------------------------
-    const navItems = document.querySelectorAll('.nav-item');
-    const views = document.querySelectorAll('.view');
-
-    function switchView(targetViewId) {
-        // Hide all views
-        views.forEach(v => v.classList.add('hidden'));
-        // Remove active from all nav items
-        navItems.forEach(i => i.classList.remove('active'));
-
-        // Show target view
-        const targetView = document.getElementById('view-' + targetViewId);
-        if (targetView) targetView.classList.remove('hidden');
-
-        // Set active nav item
-        const targetNav = document.querySelector(`.nav-item[data-view="${targetViewId}"]`);
-        if (targetNav) targetNav.classList.add('active');
-
-        // Re-init lucide icons in newly shown view (for placeholder icons)
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
+    function navigateTo(url) {
+        document.body.classList.add('page-exiting');
+        setTimeout(() => {
+            window.location.href = url;
+        }, 250);
     }
 
-    navItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            const viewId = item.getAttribute('data-view');
-            if (viewId) switchView(viewId);
-        });
+    // Attach smooth navigation to all sidebar nav-links that go to external pages
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href !== '#') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                navigateTo(href);
+            });
+        }
     });
-
     // -------------------------------------------------------------
     // 3. Header Actions (Download PDF simulation)
     // -------------------------------------------------------------
@@ -138,6 +124,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnDownload) {
         btnDownload.addEventListener('click', () => {
             window.print();
+        });
+    }
+
+    // --- Logout Trigger ---
+    const logoutBtn = document.querySelector('.logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            navigateTo('../LandingPage/LandingPage.html');
         });
     }
 });

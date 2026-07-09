@@ -2,25 +2,76 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Tab Switching ---
-  const tabItems = document.querySelectorAll('.nav-item');
+  // --- Tab Switching & Navigation ---
+  const tabItems = document.querySelectorAll('.nav-item:not(.logout-item)');
   const tabPanels = document.querySelectorAll('.tab-panel');
+
+  // --- Smooth Cross-Page Navigation ---
+  function navigateTo(url) {
+    document.body.classList.add('page-exiting');
+    setTimeout(() => {
+      window.location.href = url;
+    }, 250);
+  }
 
   tabItems.forEach(item => {
     item.addEventListener('click', (e) => {
+      const link = item.querySelector('a');
+      const href = link && link.getAttribute('href');
+      if (href && href !== '#' && href !== '') {
+        e.preventDefault();
+        navigateTo(href);
+        return;
+      }
       e.preventDefault();
       const targetTab = item.getAttribute('data-tab');
-
-      tabItems.forEach(t => t.classList.remove('active'));
-      tabPanels.forEach(p => p.classList.remove('active'));
-
-      item.classList.add('active');
-      const targetPanel = document.getElementById(`tab-${targetTab}`);
-      if (targetPanel) {
-        targetPanel.classList.add('active');
+      if (targetTab) {
+        activateTab(targetTab);
+        window.location.hash = targetTab;
       }
     });
   });
+
+  function activateTab(tabId) {
+    tabItems.forEach(t => t.classList.remove('active'));
+    tabPanels.forEach(p => p.classList.remove('active'));
+
+    const activeItem = document.querySelector(`.nav-item[data-tab="${tabId}"]`);
+    if (activeItem) activeItem.classList.add('active');
+
+    const targetPanel = document.getElementById(`tab-${tabId}`);
+    if (targetPanel) {
+      targetPanel.classList.add('active');
+    }
+  }
+
+  // Handle Hash Routing on Load and Change
+  function handleHashRoute() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && ['dashboard', 'interviews', 'insights', 'analytics', 'settings'].includes(hash)) {
+      if (hash === 'analytics') {
+        window.location.href = '../performanceDashboard/index.html';
+      } else if (hash === 'settings') {
+        window.location.href = '../profileSettings-page/index.html';
+      } else {
+        activateTab(hash);
+      }
+    }
+  }
+
+  handleHashRoute();
+  window.addEventListener('hashchange', handleHashRoute);
+
+  // --- Logout Trigger ---
+  const logoutBtn = document.querySelector('.logout-btn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      navigateTo('../LandingPage/LandingPage.html');
+    });
+  }
 
   // --- Radar Chart Drawing ---
   const skillData = {
