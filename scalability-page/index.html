@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soft-6 | System Scalability Architecture</title>
+
+  <meta name="description"
+    content="Practice the System Scalability Architecture scenario on Soft-6 AI Interview Platform. Design a globally distributed betting engine with low latency.">
+
+  <!-- Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-text-wrapper">
+          <span class="brand-title">Soft-6</span>
+          <span class="brand-subtitle">AI COPILOT ACTIVE</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item" data-tab="dashboard">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined nav-icon">dashboard</span>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item active" data-tab="interviews">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined nav-icon">group</span>
+              <span class="nav-text">Interviews</span>
+            </a>
+          </li>
+          <li class="nav-item" data-tab="analytics">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined nav-icon">bar_chart</span>
+              <span class="nav-text">Analytics</span>
+            </a>
+          </li>
+          <li class="nav-item" data-tab="insights">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined nav-icon">auto_awesome</span>
+              <span class="nav-text">AI Insights</span>
+            </a>
+          </li>
+          <li class="nav-item" data-tab="settings">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined nav-icon">settings</span>
+              <span class="nav-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-actions">
+        <button class="btn btn-primary btn-block" id="btnNewAssessment">
+          <span class="material-symbols-outlined btn-icon">add</span>
+          New Assessment
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- Top Action Bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <button class="btn-back" onclick="window.history.back()" aria-label="Go Back">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <div class="title-area">
+            <h1 class="page-title">System Scalability Architecture</h1>
+            <div class="badges-row">
+              <span class="badge badge-tag">EXPERT</span>
+              <span class="badge badge-tag">SYSTEM DESIGN</span>
+            </div>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <button class="btn btn-secondary" id="btnSaveLater">Save for Later</button>
+          <button class="btn btn-primary" id="btnPracticeNow">Practice Now</button>
+        </div>
+      </header>
+
+      <!-- Dashboard Layout Grid -->
+      <div class="dashboard-grid">
+
+        <!-- Left Column (Scenario and Answers) -->
+        <div class="grid-column-left">
+
+          <!-- Complex System Scenario Card -->
+          <article class="card scenario-card">
+            <div class="card-header">
+              <span class="card-badge uppercase purple-text">
+                <span class="material-symbols-outlined icon-small">assignment</span>
+                COMPLEX SYSTEM SCENARIO
+              </span>
+            </div>
+            <h2 class="scenario-title">
+              Design a globally distributed real-time betting engine with sub-100ms latency across 5 continents.
+            </h2>
+            <p class="scenario-desc">
+              The system must handle 10 million concurrent users during peak events (e.g., World Cup Final) with 99.99%
+              availability. It needs to resolve thousands of simultaneous updates per second with guaranteed eventual
+              consistency and strict ordering for transaction logs.
+            </p>
+            <div class="scenario-meta">
+              <div class="meta-block">
+                <span class="meta-label">DATA FLOW</span>
+                <span class="meta-value">WebSockets / gRPC</span>
+              </div>
+              <div class="meta-block">
+                <span class="meta-label">TRAFFIC PEAK</span>
+                <span class="meta-value">10M Concurrent</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Benchmark High Quality Answer Card -->
+          <article class="card answer-card">
+            <div class="card-header space-between">
+              <span class="card-badge uppercase purple-text">
+                <span class="material-symbols-outlined icon-small">verified_user</span>
+                BENCHMARK HIGH-QUALITY ANSWER
+              </span>
+              <span class="read-time-badge">READ TIME: 6 MIN</span>
+            </div>
+
+            <section class="answer-section">
+              <h3 class="section-subtitle">1. Multi-Regional Edge Deployment</h3>
+              <p class="section-desc">
+                Deploy edge clusters in major cloud regions (US-East, EU-West, AP-Southwest). Use Global Server Load
+                Balancing (GSLB) with Anycast IP to route users to the nearest point of presence, reducing the initial
+                handshake latency.
+              </p>
+              <div class="map-container">
+                <img src="global_network_map.png" alt="Global Network Nodes Map" class="network-map-img">
+              </div>
+            </section>
+
+            <section class="answer-section">
+              <h3 class="section-subtitle">2. Conflict-free Replicated Data Types (CRDTs)</h3>
+              <p class="section-desc">
+                To handle state across continents without a central bottleneck, implement CRDTs for the betting pool.
+                This allows local updates to be merged mathematically without coordination, ensuring consistent results
+                once all updates have propagated.
+              </p>
+            </section>
+          </article>
+
+        </div>
+
+        <!-- Right Column (Strategy, Metrics, Concepts) -->
+        <div class="grid-column-right">
+
+          <!-- AI Expert Strategy Card -->
+          <article class="card strategy-card">
+            <div class="card-header">
+              <span class="card-badge uppercase purple-text">
+                <span class="material-symbols-outlined icon-small">auto_awesome</span>
+                AI EXPERT STRATEGY
+              </span>
+            </div>
+
+            <div class="strategy-list">
+              <div class="strategy-item">
+                <h4 class="strategy-item-title">Focus on Observability</h4>
+                <p class="strategy-item-desc">
+                  Mention OpenTelemetry for tracing across service boundaries. Interviewers look for "Day 2" operational
+                  awareness.
+                </p>
+              </div>
+              <div class="strategy-item">
+                <h4 class="strategy-item-title">Edge Compute Offloading</h4>
+                <p class="strategy-item-desc">
+                  Propose moving validation logic to the edge using Cloudflare Workers or AWS Lambda@Edge to minimize
+                  RTT.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Performance Metrics Card -->
+          <article class="card metrics-card">
+            <h3 class="card-title uppercase">PERFORMANCE METRICS</h3>
+            <div class="metrics-list">
+              <div class="metric-item">
+                <div class="metric-header">
+                  <span class="metric-name">Avg. User Score</span>
+                  <span class="metric-percent">64%</span>
+                </div>
+                <div class="progress-bar-bg">
+                  <div class="progress-bar-fill fill-purple" data-width="64%" style="width: 0%;"></div>
+                </div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-header">
+                  <span class="metric-name">Success Rate</span>
+                  <span class="metric-percent">22%</span>
+                </div>
+                <div class="progress-bar-bg">
+                  <div class="progress-bar-fill fill-purple" data-width="22%" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Core Concepts Card -->
+          <article class="card concepts-card">
+            <h3 class="card-title uppercase">CORE CONCEPTS</h3>
+            <div class="concepts-list">
+              <span class="concept-tag">Consistent Hashing</span>
+              <span class="concept-tag">Pub/Sub Architecture</span>
+              <span class="concept-tag">Eventual Consistency</span>
+              <span class="concept-tag">GSLB</span>
+              <span class="concept-tag">Backpressure</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+      <!-- Footer Section -->
+      <footer class="app-footer">
+        <div class="footer-left">
+          <span class="footer-logo">Soft-6</span>
+          <span class="footer-copyright">© 2026 Soft-6 AI Precision Platforms</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
