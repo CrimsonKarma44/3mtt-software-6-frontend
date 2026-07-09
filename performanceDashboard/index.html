@@ -5,12 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Performance Analytics - Soft-6</title>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('soft6-theme') || 'light';
+            const savedPattern = localStorage.getItem('soft6-pattern') || 'none';
+            const savedAccent = localStorage.getItem('soft6-accent') || 'indigo';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.documentElement.setAttribute('data-pattern', savedPattern);
+            document.documentElement.setAttribute('data-accent', savedAccent);
+        })();
+    </script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Chart.js -->
@@ -20,67 +32,73 @@
 
 <body>
     <div class="app-container">
-        <!-- Sidebar -->
+        <!-- Sidebar Navigation -->
         <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo-container">
-                    <span class="logo-text">Soft-6</span>
-                    <span class="logo-dot"></span>
-                </div>
-                <span class="sidebar-subtitle">AI Copilot Active</span>
+            <div class="sidebar-brand">
+                <a href="../LandingPage/LandingPage.html" style="text-decoration: none; display: flex; align-items: center;">
+                    <div class="brand-text-wrapper">
+                        <span class="brand-title">Soft-6</span>
+                        <span class="brand-subtitle">COPILOT ACTIVE</span>
+                    </div>
+                </a>
             </div>
 
             <nav class="sidebar-nav">
-                <ul>
-                    <li>
-                        <a href="#" class="nav-item" data-view="dashboard">
-                            <i data-lucide="layout-dashboard"></i>
-                            <span>Dashboard</span>
+                <ul class="nav-list">
+                    <li class="nav-item" data-tab="dashboard">
+                        <a href="../profilePage/index.html#dashboard" class="nav-link">
+                            <span class="material-symbols-outlined nav-icon">dashboard</span>
+                            <span class="nav-text">Dashboard</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-item active" data-view="analytics">
-                            <i data-lucide="bar-chart-3"></i>
-                            <span>Analytics</span>
+                    <li class="nav-item" data-tab="interviews">
+                        <a href="../profilePage/index.html#interviews" class="nav-link">
+                            <span class="material-symbols-outlined nav-icon">group</span>
+                            <span class="nav-text">Interviews</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-item" data-view="interviews">
-                            <i data-lucide="message-square-code"></i>
-                            <span>Interviews</span>
+                    <li class="nav-item active" data-tab="analytics">
+                        <a href="#" class="nav-link">
+                            <span class="material-symbols-outlined nav-icon">bar_chart</span>
+                            <span class="nav-text">Analytics</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-item" data-view="ai-insights">
-                            <i data-lucide="sparkles"></i>
-                            <span>AI Insights</span>
+                    <li class="nav-item" data-tab="insights">
+                        <a href="../profilePage/index.html#insights" class="nav-link">
+                            <span class="material-symbols-outlined nav-icon">auto_awesome</span>
+                            <span class="nav-text">Insights</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-item" data-view="settings">
-                            <i data-lucide="settings"></i>
-                            <span>Settings</span>
+                    <li class="nav-item" data-tab="settings">
+                        <a href="../profileSettings-page/index.html" class="nav-link">
+                            <span class="material-symbols-outlined nav-icon">settings</span>
+                            <span class="nav-text">Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item logout-item">
+                        <a href="#" class="nav-link logout-btn" style="color: var(--danger);">
+                            <span class="material-symbols-outlined nav-icon">logout</span>
+                            <span class="nav-text">Logout</span>
                         </a>
                     </li>
                 </ul>
             </nav>
 
-            <div class="sidebar-footer">
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100"
-                            alt="Alex Thompson" class="avatar-img">
-                        <span class="avatar-status"></span>
-                    </div>
-                    <div class="user-info">
-                        <span class="user-name">Alex Thompson</span>
-                        <span class="user-plan">ENTERPRISE PLAN</span>
-                    </div>
-                </div>
-                <button class="btn btn-primary btn-block btn-new-assessment" id="btnNewAssessment">
-                    <i data-lucide="plus-circle"></i>
-                    <span>New Assessment</span>
+            <div class="sidebar-actions">
+                <button class="btn btn-primary btn-block" id="btnNewAssessment">
+                    <span class="material-symbols-outlined btn-icon">add</span>
+                    New Assessment
                 </button>
+            </div>
+
+            <div class="sidebar-profile">
+                <div class="profile-avatar-wrapper">
+                    <div class="profile-avatar">AT</div>
+                </div>
+                <div class="profile-info">
+                    <span class="profile-name">Alex Thompson</span>
+                    <span class="profile-tier">Enterprise Plan</span>
+                </div>
             </div>
         </aside>
 

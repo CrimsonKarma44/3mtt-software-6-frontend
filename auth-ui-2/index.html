@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soft-6 | Authentication Page</title>
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('soft6-theme') || 'light';
+        const savedPattern = localStorage.getItem('soft6-pattern') || 'none';
+        const savedAccent = localStorage.getItem('soft6-accent') || 'indigo';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.setAttribute('data-pattern', savedPattern);
+        document.documentElement.setAttribute('data-accent', savedAccent);
+      })();
+    </script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -20,9 +30,9 @@
             <div class="background-graphics"></div>
 
             <div class="left-content">
-                <div class="logo">
+                <a href="../LandingPage/LandingPage.html" class="logo" style="text-decoration: none; color: white;">
                     <span>Soft-6</span>
-                </div>
+                </a>
 
                 <div class="hero-text">
                     <h1>Experience the<br>precision of AI-<br>driven intelligence.</h1>

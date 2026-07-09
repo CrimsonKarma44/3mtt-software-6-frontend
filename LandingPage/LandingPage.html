@@ -5,6 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soft-6</title>
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('soft6-theme') || 'light';
+      const savedPattern = localStorage.getItem('soft6-pattern') || 'none';
+      const savedAccent = localStorage.getItem('soft6-accent') || 'indigo';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.setAttribute('data-pattern', savedPattern);
+      document.documentElement.setAttribute('data-accent', savedAccent);
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +24,7 @@
 <body>
 
   <header class="navbar">
-    <div class="logo">Soft-6</div>
+    <a href="LandingPage.html" class="logo" style="text-decoration: none;">Soft-6</a>
 
     <nav>
       <a href="#">Solutions</a>
@@ -24,8 +34,8 @@
     </nav>
 
     <div class="nav-actions">
-      <a href="file:///C:/Users/Hp/Desktop/3mtt-software-6-frontend/auth-ui-2/index.html" target="_blank" class="login">Login</a>
-      <a href="file:///C:/Users/Hp/Desktop/3mtt-software-6-frontend/auth-ui-2/index.html" target="_blank"><button>Get Started</button></a>
+      <a href="../auth-ui-2/index.html" class="login">Login</a>
+      <a href="../auth-ui-2/index.html"><button>Get Started</button></a>
     </div>
   </header>
 
@@ -45,7 +55,7 @@
     </p>
 
     <div class="hero-buttons">
-      <button class="primary-btn">Start Practicing</button>
+      <a href="../auth-ui-2/index.html"><button class="primary-btn">Start Practicing</button></a>
       <button class="secondary-btn">Explore Categories</button>
     </div>
 

@@ -5,6 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soft-6 | Profile Page</title>
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('soft6-theme') || 'light';
+      const savedPattern = localStorage.getItem('soft6-pattern') || 'none';
+      const savedAccent = localStorage.getItem('soft6-accent') || 'indigo';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.setAttribute('data-pattern', savedPattern);
+      document.documentElement.setAttribute('data-accent', savedAccent);
+    })();
+  </script>
 
   <meta name="description"
     content="Prepare for technical rounds with Soft-6 Copilot dashboard. Track interviews, average score, hours prepped, and skill profiles.">
@@ -27,11 +37,12 @@
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
       <div class="sidebar-brand">
-
-        <div class="brand-text-wrapper">
-          <span class="brand-title">Soft-6</span>
-          <span class="brand-subtitle">COPILOT ACTIVE</span>
-        </div>
+        <a href="../LandingPage/LandingPage.html" style="text-decoration: none; display: flex; align-items: center;">
+          <div class="brand-text-wrapper">
+            <span class="brand-title">Soft-6</span>
+            <span class="brand-subtitle">COPILOT ACTIVE</span>
+          </div>
+        </a>
       </div>
 
       <nav class="sidebar-nav">
@@ -49,7 +60,7 @@
             </a>
           </li>
           <li class="nav-item" data-tab="analytics">
-            <a href="#" class="nav-link">
+            <a href="../performanceDashboard/index.html" class="nav-link">
               <span class="material-symbols-outlined nav-icon">bar_chart</span>
               <span class="nav-text">Analytics</span>
             </a>
@@ -61,9 +72,15 @@
             </a>
           </li>
           <li class="nav-item" data-tab="settings">
-            <a href="#" class="nav-link">
+            <a href="../profileSettings-page/index.html" class="nav-link">
               <span class="material-symbols-outlined nav-icon">settings</span>
               <span class="nav-text">Settings</span>
+            </a>
+          </li>
+          <li class="nav-item logout-item">
+            <a href="#" class="nav-link logout-btn" style="color: var(--danger);">
+              <span class="material-symbols-outlined nav-icon">logout</span>
+              <span class="nav-text">Logout</span>
             </a>
           </li>
         </ul>
