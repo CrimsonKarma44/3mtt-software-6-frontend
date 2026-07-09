@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soft-6</title>
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('soft6-theme') || 'light';
+      const savedPattern = localStorage.getItem('soft6-pattern') || 'none';
+      const savedAccent = localStorage.getItem('soft6-accent') || 'indigo';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.setAttribute('data-pattern', savedPattern);
+      document.documentElement.setAttribute('data-accent', savedAccent);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="LandingPage.css" />
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="LandingPage.html" class="logo" style="text-decoration: none;">Soft-6</a>
+
+    <nav>
+      <a href="#">Solutions</a>
+      <a href="#">Pricing</a>
+      <a href="#">Enterprise</a>
+      <a href="#">Resources</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="../auth-ui-2/index.html" class="login">Login</a>
+      <a href="../auth-ui-2/index.html"><button>Get Started</button></a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">AI Interview Platform</div>
+
+    <h1>
+      Practice Interviews.<br>
+      <span>Build Confidence.</span><br>
+      Get Hired.
+    </h1>
+
+    <p>
+      Master your next career move with Soft-6. Our AI-driven platform
+      provides hyper-realistic interview simulations and personalized
+      precision feedback.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="../auth-ui-2/index.html"><button class="primary-btn">Start Practicing</button></a>
+      <button class="secondary-btn">Explore Categories</button>
+    </div>
+
+    <div class="dashboard-preview">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop"
+        alt="Dashboard" />
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="section-title">
+      <h2>Engineered for Precision.</h2>
+      <p>Every feature is designed to sharpen your skills through realistic, high-fidelity practice.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card large-card">
+        <h3>AI-Powered Real-time Feedback</h3>
+        <p>
+          Our neural engine analyzes your tone, content, and body
+          language instantly, providing granular insights.
+        </p>
+        <button>View Example</button>
+      </div>
+
+      <div class="feature-card">
+        <h3>Diverse Role Categories</h3>
+        <p>From Silicon Valley tech roles to creative agencies, we’ve mapped the entire hiring landscape.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Performance Analytics</h3>
+        <p>Visualize your growth with detailed progress tracking and scoring.</p>
+      </div>
+
+      <div class="feature-card large-card bordered">
+        <h3>Enterprise Grade Security</h3>
+        <p>Your profile sessions are private. We utilize SOC2 Type II compliant infrastructure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pathways">
+    <div class="section-top">
+      <div>
+        <h2>Specialized Pathways.</h2>
+        <p>Choose your domain and start a focused session.</p>
+      </div>
+
+      <a href="#">View All Categories →</a>
+    </div>
+
+    <div class="pathway-grid">
+      <div class="pathway-card">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
+          alt="Software Engineering">
+        <div class="pathway-content">
+          <h3>Software Engineering</h3>
+          <p>System design, algorithms, backend coding roles.</p>
+          <button>Explore Track</button>
+        </div>
+      </div>
+
+      <div class="pathway-card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
+          alt="UI UX">
+        <div class="pathway-content">
+          <h3>UI/UX Design</h3>
+          <p>Research, prototyping and product design workflows.</p>
+          <button>Explore Track</button>
+        </div>
+      </div>
+
+      <div class="pathway-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+          alt="Data Science">
+        <div class="pathway-content">
+          <h3>Data Science</h3>
+          <p>Machine learning, data analysis and AI interviews.</p>
+          <button>Explore Track</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="copilot">
+    <div class="copilot-text">
+      <span>Voice-First Intelligence</span>
+      <h2>Meet your new Co-Pilot.</h2>
+      <p>
+        Our AI interviewer Assistant isn't just a chatbot. It adapts in real-time and follows up on your responses.
+      </p>
+
+      <div class="copilot-points">
+        <div class="point">
+          <h4>Dynamic Adaptation</h4>
+          <p>Questions evolve as your interview progresses.</p>
+        </div>
+
+        <div class="point">
+          <h4>Natural Voice Synthesis</h4>
+          <p>Ultra-realistic, human-like voice interaction.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="copilot-card">
+      <div class="chat-bubble light">
+        Here’s a great answer. Can you expand on how you handled cross-functional communication?
+      </div>
+
+      <div class="chat-bubble dark">
+        Absolutely. I initiated a stakeholder meeting to synchronize deliverables.
+      </div>
+
+      <div class="voice-wave"></div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <h2>50k+</h2>
+      <p>Active Users</p>
+    </div>
+
+    <div class="stat">
+      <h2>1.2M</h2>
+      <p>Interviews Run</p>
+    </div>
+
+    <div class="stat">
+      <h2>92%</h2>
+      <p>Success Rate</p>
+    </div>
+
+    <div class="stat">
+      <h2>140+</h2>
+      <p>Interview Tracks</p>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Trusted by the next generation of leaders.</h2>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>
+          “The real-time feedback on my body language was a game changer.”
+        </p>
+        <div class="user">
+          <strong>Sarah Johnson</strong>
+          <span>Software Engineering Intern</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p>
+          “I used Soft-6 before every technical interview and received offers.”
+        </p>
+        <div class="user">
+          <strong>Marcus Chen</strong>
+          <span>Product Designer</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p>
+          “Practicing in Soft-6 was the best career decision I made this year.”
+        </p>
+        <div class="user">
+          <strong>Emma Rodriguez</strong>
+          <span>Data Analyst Applicant</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-box">
+      <h2>Ready to ace your next big interview?</h2>
+      <p>
+        Join thousands of professionals who have leveled up their careers with Soft-6 AI.
+      </p>
+
+      <div class="cta-buttons">
+        <button class="white-btn">Start for Free</button>
+        <button class="outline-btn">Schedule Demo</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">Soft-6</div>
+
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Security</a>
+      <a href="#">Status</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+<script src="LandingPage.js"></script>

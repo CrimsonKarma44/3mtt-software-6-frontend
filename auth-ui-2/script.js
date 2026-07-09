@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // ✅ All good — simulate account creation
         showToast({ type: 'success', title: 'Account created!', message: 'Welcome to Soft-6. Redirecting you now…' });
         signupForm.reset();
+        setTimeout(() => { window.location.href = '../profilePage/index.html'; }, 1800);
     });
 
 
@@ -197,6 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // ✅ Simulate login success
         showToast({ type: 'success', title: 'Logged in successfully!', message: 'Welcome back to Soft-6.' });
         loginForm.reset();
+        setTimeout(() => { window.location.href = '../profilePage/index.html'; }, 1800);
     });
 
 

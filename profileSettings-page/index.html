@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-accent="indigo" data-pattern="none">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soft-6 · Profile Settings</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <a href="../LandingPage/LandingPage.html" style="text-decoration: none; display: flex; align-items: center;">
+        <div class="brand-text-wrapper">
+          <span class="brand-title">Soft-6</span>
+          <span class="brand-subtitle">COPILOT ACTIVE</span>
+        </div>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul class="nav-list">
+        <li class="nav-item" data-tab="dashboard">
+          <a href="../profilePage/index.html#dashboard" class="nav-link">
+            <span class="material-symbols-outlined nav-icon">dashboard</span>
+            <span class="nav-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-tab="interviews">
+          <a href="../profilePage/index.html#interviews" class="nav-link">
+            <span class="material-symbols-outlined nav-icon">group</span>
+            <span class="nav-text">Interviews</span>
+          </a>
+        </li>
+        <li class="nav-item" data-tab="analytics">
+          <a href="../performanceDashboard/index.html" class="nav-link">
+            <span class="material-symbols-outlined nav-icon">bar_chart</span>
+            <span class="nav-text">Analytics</span>
+          </a>
+        </li>
+        <li class="nav-item" data-tab="insights">
+          <a href="../profilePage/index.html#insights" class="nav-link">
+            <span class="material-symbols-outlined nav-icon">auto_awesome</span>
+            <span class="nav-text">Insights</span>
+          </a>
+        </li>
+        <li class="nav-item active" data-tab="settings">
+          <a href="#" class="nav-link">
+            <span class="material-symbols-outlined nav-icon">settings</span>
+            <span class="nav-text">Settings</span>
+          </a>
+        </li>
+        <li class="nav-item logout-item">
+          <a href="#" class="nav-link logout-btn" style="color: var(--danger);">
+            <span class="material-symbols-outlined nav-icon">logout</span>
+            <span class="nav-text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-profile">
+      <div class="profile-avatar-wrapper">
+        <div class="profile-avatar">AM</div>
+      </div>
+      <div class="profile-info">
+        <span class="profile-name">Alex Mercer</span>
+        <span class="profile-tier">Enterprise Pro</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENT WRAPPER -->
+  <div class="content-wrapper">
+    <!-- MAIN -->
+    <main class="main">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Profile Settings</h1>
+          <p class="page-subtitle">Precision control over your executive identity and platform security.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-save" id="btn-save-changes">Save Changes</button>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <!-- LEFT COL (Profile Optimization, Public Identity) -->
+        <div class="col-left">
+
+          <!-- Profile Optimization -->
+          <div class="card">
+            <div class="opt-header">
+              <span class="opt-title">Profile Optimization</span>
+              <span class="badge">AI Analysis: 92% Complete</span>
+            </div>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill"></div>
+            </div>
+            <div class="opt-checks">
+              <div class="opt-check">
+                <span class="check-icon">✔</span>
+                Biographical precision verified
+              </div>
+              <div class="opt-check">
+                <span class="check-icon pending">○</span>
+                2-Factor Authentication pending
+              </div>
+            </div>
+          </div>
+
+          <!-- Public Identity -->
+          <div class="card">
+            <div class="identity-header">
+              <div class="avatar-lg">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+              </div>
+              <div>
+                <div class="section-title">Public Identity</div>
+                <div class="section-subtitle" style="margin-bottom:0">Used for internal reporting and AI collaboration.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" value="Alex Mercer">
+              </div>
+              <div class="form-group">
+                <label for="profTitle">Professional Title</label>
+                <input type="text" id="profTitle" value="Talent Acquisition Director">
+              </div>
+              <div class="form-group full">
+                <label for="emailAddr">Email Address</label>
+                <div class="input-wrap">
+                  <input type="email" id="emailAddr" value="alex.mercer@soft6-ai.com" disabled>
+                  <span class="input-icon">🔒</span>
+                </div>
+              </div>
+              <div class="form-group full">
+                <label for="bioDesc">Bio (AI Enhanced)</label>
+                <textarea
+                  id="bioDesc">Passionate recruitment leader focused on leveraging AI precision to scale engineering teams across global markets.</textarea>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COL (Security Hub, Notifications, Page Settings, Privacy Vault) -->
+        <div class="col-right">
+
+          <!-- Security Hub -->
+          <div class="card">
+            <div class="card-section-title">Security Hub</div>
+            <div class="security-item" id="btn-change-password">
+              <div class="sec-left">
+                <span class="sec-name">Password</span>
+                <span class="sec-sub">Last changed 42 days ago</span>
+              </div>
+              <span class="sec-arrow">›</span>
+            </div>
+            <div class="security-item warning" id="btn-enable-2fa">
+              <div class="sec-left">
+                <span class="sec-name" style="color:var(--danger)">2FA Disabled</span>
+                <span class="sec-sub red">Increase security by 40%</span>
+              </div>
+              <button class="btn-enable">Enable</button>
+            </div>
+          </div>
+
+          <!-- Notifications -->
+          <div class="card">
+            <div class="card-section-title">Notifications</div>
+            <div class="notif-item">
+              <div class="notif-text">
+                <div class="notif-name">AI Insights Alert</div>
+                <div class="notif-desc">New candidate analysis ready</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="notif-ai-insights" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="notif-item">
+              <div class="notif-text">
+                <div class="notif-name">Weekly Summary</div>
+                <div class="notif-desc">Precision performance metrics</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="notif-weekly-summary">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="notif-item">
+              <div class="notif-text">
+                <div class="notif-name">Browser Alerts</div>
+                <div class="notif-desc">Real-time interview pings</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="notif-browser-alerts" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Page Settings -->
+          <div class="card">
+            <div class="card-section-title">Page Settings</div>
+
+            <!-- Theme Toggle (Dark/Light) -->
+            <div class="setting-item">
+              <div class="setting-text">
+                <span class="setting-name">Dark Mode</span>
+                <span class="setting-desc">Switch between light and dark themes</span>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="theme-toggle">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <!-- AMOLED Switch (shows when Dark Mode is on) -->
+            <div class="setting-item" id="amoled-setting-item" style="display: none;">
+              <div class="setting-text">
+                <span class="setting-name">AMOLED Black</span>
+                <span class="setting-desc">Pure black background for dark theme</span>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="amoled-toggle">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <!-- Background Pattern -->
+            <div class="setting-item flex-col">
+              <span class="setting-label">Background Style</span>
+              <div class="select-wrapper">
+                <select id="bg-pattern-select">
+                  <option value="none">Solid Clean</option>
+                  <option value="dots">Subtle Dots</option>
+                  <option value="grid">Technical Grid</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Accent Color selection -->
+            <div class="setting-item flex-col">
+              <span class="setting-label">Accent Color</span>
+              <div class="accent-selector">
+                <label class="accent-dot indigo active-accent" title="Indigo" data-color="indigo">
+                  <input type="radio" name="accent-color" value="indigo" checked>
+                  <span class="accent-dot-inner"></span>
+                </label>
+                <label class="accent-dot purple" title="Purple" data-color="purple">
+                  <input type="radio" name="accent-color" value="purple">
+                  <span class="accent-dot-inner"></span>
+                </label>
+                <label class="accent-dot teal" title="Teal" data-color="teal">
+                  <input type="radio" name="accent-color" value="teal">
+                  <span class="accent-dot-inner"></span>
+                </label>
+                <label class="accent-dot emerald" title="Emerald" data-color="emerald">
+                  <input type="radio" name="accent-color" value="emerald">
+                  <span class="accent-dot-inner"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Privacy Vault -->
+          <div class="privacy-card">
+            <div class="privacy-header">
+              <span class="privacy-icon">🛡️</span>
+              <span class="privacy-title">Privacy Vault</span>
+            </div>
+            <p class="privacy-desc">Your personal data is encrypted with enterprise-grade AES-256 protocols and
+              processed strictly on-premise.</p>
+            <button class="btn-audit" id="btn-download-audit">↓ Download Data Audit</button>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div style="display:flex;align-items:center">
+        <span class="footer-logo">Soft-6</span>
+        <span>© 2026 Soft-6 AI Precision Platforms</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">✓ Changes saved successfully</div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>

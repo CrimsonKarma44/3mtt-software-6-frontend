@@ -647,3 +647,92 @@ body {
         gap: 0;
     }
 }
+
+/* --- Dynamic Theme & Accent Syncing --- */
+[data-theme="dark"] {
+  --bg-primary: #0d0f1a;
+  --bg-secondary: #161827;
+  --text-primary: #f1f3ff;
+  --text-secondary: #8b92b8;
+  --text-tertiary: #555d82;
+  --border-color: #252840;
+  --input-bg: #1a1c2e;
+  --left-bg: #1e114a;
+}
+[data-theme="amoled"] {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-tertiary: #666666;
+  --border-color: #1a1a1a;
+  --input-bg: #0d0d0d;
+  --left-bg: #101015;
+}
+
+[data-accent="indigo"] {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+}
+[data-theme="dark"][data-accent="indigo"] {
+  --primary-color: #818cf8;
+}
+[data-theme="amoled"][data-accent="indigo"] {
+  --primary-color: #818cf8;
+}
+
+[data-accent="purple"] {
+  --primary-color: #7c3aed;
+  --primary-hover: #6d28d9;
+}
+[data-theme="dark"][data-accent="purple"] {
+  --primary-color: #a78bfa;
+}
+[data-theme="amoled"][data-accent="purple"] {
+  --primary-color: #a78bfa;
+}
+
+[data-accent="teal"] {
+  --primary-color: #0d9488;
+  --primary-hover: #0f766e;
+}
+[data-theme="dark"][data-accent="teal"] {
+  --primary-color: #2dd4bf;
+}
+[data-theme="amoled"][data-accent="teal"] {
+  --primary-color: #2dd4bf;
+}
+
+[data-accent="emerald"] {
+  --primary-color: #059669;
+  --primary-hover: #047857;
+}
+[data-theme="dark"][data-accent="emerald"] {
+  --primary-color: #34d399;
+}
+[data-theme="amoled"][data-accent="emerald"] {
+  --primary-color: #34d399;
+}
+
+/* Background patterns layer */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-image 0.3s ease;
+}
+[data-pattern="grid"] body::before {
+  background-image: 
+    linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.12;
+}
+[data-pattern="dots"] body::before {
+  background-image: radial-gradient(var(--text-tertiary) 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.15;
+}
